@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/5b2b770845.js" crossorigin="anonymous"></script>
+    <title>hover top</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    /* min-height: 100vh; */
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    overflow: hidden;
+}
+#section-btn #ul-btn #a-btn i{
+    font-size: 30px;
+    position: relative;
+    z-index: 5;
+}
+#section-btn{
+    width: max-content;
+    padding: 0px 20px 20px 20px;
+    height: 70px;
+    background-color: rgb(233, 197, 17);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+#section-btn #ul-btn{
+    display: flex;
+}
+#section-btn #ul-btn a{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-inline: 20px;
+    color: black;
+}
+#section-btn #ul-btn #a-btn #li-btn{
+    pointer-events: none;
+    width: 0px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: white;
+    position: absolute;
+    margin-top: -120px;
+    justify-content: center;
+    display: grid;
+    z-index: 2;
+    transition: all .2s ease;
+}
+#section-btn #ul-btn #a-btn #li-btn p{
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    margin-left: -25px;
+    background-color: white;
+    z-index: 1;
+    transition: all .2s ease;
+}
+#section-btn #ul-btn #a-btn #li-btn::before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: rgb(233, 197, 17);
+    margin-left: -25px;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+    transition: all .6s ease;
+}
+#section-btn #ul-btn #a-btn #li-btn::after{
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: rgb(233, 197, 17);
+    margin-right: -25px;
+    right: 0;
+    position: absolute;
+    z-index: 2;
+    transition: all .6s ease;
+}
+#section-btn #ul-btn #a-btn:hover #li-btn{
+    margin-top: 0px;
+    width: 50px;
+}
+#section-btn #ul-btn #a-btn:hover #li-btn p{
+    width: 100px;
+}
+#section-btn #ul-btn #a-btn:hover #li-btn::before{
+    border-top-right-radius: 20px;
+}
+#section-btn #ul-btn #a-btn:hover #li-btn::after{
+    border-top-left-radius: 20px;
+}
+
+#check:checked ~ #bg{
+    background-color: black;
+}
+#bg{
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    position: fixed;
+    z-index: -1;
+    transition: all .2s ease;
+}
+</style>
+</head>
+<body>
+    <input type="checkbox" id="check" style="display: none;">
+    <section id="section-btn">
+        <ul id="ul-btn">
+            <!-- untuk menu bar { -->
+            <a id="a-btn" href=""><li id="li-btn"><p></p></li>
+                <i class="fa-solid fa-house"></i><!-- menu icon -->
+            </a>
+            <a id="a-btn" href=""><li id="li-btn"><p></p></li>
+                <i class="fa-solid fa-house"></i><!-- menu icon -->
+            </a>
+            <a id="a-btn" href=""><li id="li-btn"><p></p></li>
+                <i class="fa-solid fa-house"></i><!-- menu icon -->
+            </a>
+            <!-- } -->
+        </ul>
+    </section>
+</body>
+</html>

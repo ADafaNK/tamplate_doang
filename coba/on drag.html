@@ -1,0 +1,43 @@
+<html>
+<head><br>  <title><strong>Cara Membuat Drag dan Drop Foto Dengan Javascript</strong></title>
+  <style>
+    ul li{list-style: none}
+    ul li #div1{background: orange}
+    ul li #div2{background: red}
+    ul li #div3{background: blue}
+    ul li #div4{background: yellow}
+    #div1, #div2,#div3, #div4 {width:199px; margin-right: 20px; height:296px; float: left; padding:10px; border:1px solid #aaaaaa; margin-top: 20px; overflow:hidden}
+    </style>
+</head>
+<body>
+<ul>
+	<li>
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" ondragstart="drag(event)">
+			<img id="drag1" src="https://www.blibli.com/friends-backend/wp-content/uploads/2023/02/B100118-cover.jpg" draggable="true" ondragstart="drag(event)" width="200"/>
+		</div>
+	</li>
+	<li>
+		<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" ondragstart="drag(event)"></div>
+	</li>
+	<li>
+		<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" ondragstart="drag(event)"></div>
+	</li>
+	<li>
+		<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)" ondragstart="drag(event)"></div>
+	</li>
+</ul>
+</body>
+</html>
+<script>
+  function allowDrop(geser){
+    geser.preventDefault();
+  }
+  function drag(geser){
+    geser.dataTransfer.setData("text", geser.target.id);
+  }
+  function drop(geser){
+    geser.preventDefault();
+    var data = geser.dataTransfer.getData("text");
+    geser.target.appendChild(document.getElementById(data));
+  }
+</script>
