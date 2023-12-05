@@ -7,4 +7,4 @@ button.addEventListener('click', function(e){
     else{
     body.requestFullscreen();
     }
-})
+}) 
