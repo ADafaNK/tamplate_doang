@@ -10,18 +10,6 @@
     <button>
         <i class="fa-solid fa-expand"></i>
     </button>
-
-    <script>
-        let button = document.querySelector('button'); 
-        let body = document.querySelector('body'); 
-        button.addEventListener('click', function(e){ 
-            if(document.fullscreenElement){ 
-            document.exitFullscreen() 
-            }
-            else{
-            body.requestFullscreen();
-            }
-        })
-    </script>
+    <script src="fullscreen.js"></script>
 </body>
 </html>
